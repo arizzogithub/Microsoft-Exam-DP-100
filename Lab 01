@@ -1,85 +1,53 @@
-# Lab 01: Creating an Azure Machine Learning Workspace
+Create an Azure Machine Learning workspace
+If you don't already have an Azure Machine Learning workspace in your Azure subscription, follow these steps to create one:
 
-In this lab, you will create the Azure Machine Learning workspace that you will use throughout the rest of this course.
+Sign into the Azure portal  using the Microsoft account associated with your Azure subscription.
+Select ＋Create a resource, search for Machine Learning, and create a new Machine Learning resource with the following settings:
+Workspace Name: enter a unique name of your choice
+Subscription: your Azure subscription
+Resource group: create a new resource group with a unique name
+Location: choose any available location
+Wait for your workspace resource to be created (it can take a few minutes). Then go to it in the portal, and on the Overview page for your workspace, launch Azure Machine Learning studio (or navigate to https://ml.azure.com ), and sign in using your Microsoft account.
+In Azure Machine Learning studio, toggle the ☰ icon at the top left to view the various pages in the interface. You can use these pages to manage the resources in your workspace.
+Create a compute instance
+To run the notebook used in this exercise, you will need a compute instance in your Azure Machine Learning workspace.
 
-## Before You Start
+In Azure Machine Learning studio , view the Compute page for your workspace (under Manage).
+On the Compute Instances tab, if you already have a compute instance, start it; otherwise create a new compute instance with the following settings:
+Compute name: enter a unique name
+Virtual Machine type: CPU
+Virtual Machine size: Standard_DS11_v2
+Wait for the compute instance to start (this may take a minute or so)
+Clone the ml-basics repository
+The files used in this module (and other related modules) are published in the MicrosoftDocs/ml-basics GitHub repository. If you haven't already done so, use the following steps to clone the repository to your Azure Machine Learning workspace:
 
-To complete the labs in this course, you will need an Azure subscription. If you do not already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
+In Azure Machine Learning studio , on the Compute page, view your running compute instance.
 
-If you are using an Azure Pass subscription, provided to you for this course, your account may not have been assigned to the subscription **Owner** role, which may be required for some operations in this course. To add your account to the **Owner** role:
+Use the Jupyter link to open Jupyter Notebooks in a new browser tab.
 
-1. Sign into the [Azure portal](https://portal.azure.com) and view your **Subscriptions**.
-2. Select the subscription you created using an Azure pass (it will probably have a name similar to **Azure Pass - Sponsorship**).
-3. In the blade for your subscription, open the **My Permissions** page, and then click the link on it to view complete access details for the subscription.
-4. Under **Add role assignment**, click **Add**. Then select the following and click **Save**:
-    - **Role**: Owner
-    - **Assign access to**: Azure AD user, group, or service principal
-    - **Select**: The Microsoft account you used to sign into Azure.
+In the Jupyter page, on the New menu, select Terminal. This will open a new tab with a terminal shell.
 
-## Task 1: Create an Azure ML Workspace
+In the terminal shell, run the following commands to change the current directory to the Users directory, and clone the ml-basics repository, which contains the notebook and files you will use in this exercise:
 
-As its name suggests, a workspace is a centralized place to manage all of the Azure ML assets you need to work on a machine learning project.
+Bash
 
-1. In the [Azure portal](https://portal.azure.com), create a new **Machine Learning** resource, specifying a unique workspace name and creating a new resource group in the region nearest your location.
-2. When the workspace and its associated resources have been created, view the workspace in the portal.
+Copy
+cd Users
+git clone https://github.com/microsoftdocs/ml-basics
+After the command has completed and the checkout of the files is done, close the terminal tab and view the home page in your Jupyter notebook file explorer. Then open the Users folder - it should contain an ml-basics folder, containing the files you will use in the rest of this exercise.
 
-## Task 2: Explore the Azure ML Studio Interface
+ Note
 
-You can manage workspace assets in the Azure portal, but for data scientists, this tool contains lots of irrelevant information and links that relate to managing general Azure resources. An alternative, Azure ML-specific web interface for managing workspaces is available.
+We highly recommend using Jupyter in an Azure Machine Learning workspace for this exercise. This setup ensures the correct version of Python and the various packages you will need are installed; and after creating the workspace once, you can reuse it in other modules. If you prefer to complete the exercise in a Python environment on your own computer, you can do so. You'll find details for configuring a local development environment that uses Visual Studio Code at Running the labs on your own computer . Be aware that if you choose to do this, the instructions in the exercise may not match your notebooks user interface.
 
-> **Note**: The web-based interface for Azure ML is named *Azure Machine Learning studio*, which you may find confusing as there is also a free *Azure Machine Learning Studio* product for creating machine learning models using a visual designer. A more scalable version of this visual designer is included in the new studio interface.
+Explore data in a Jupyter notebook
+After you've created a Jupyter environment and cloned the ml-basics repository, you're ready to explore data.
 
-1. In the Azure portal blade for your Azure Machine Learning workspace, click the link to launch **Azure Machine Learning studio**; or alternatively, in a new browser tab, open [https://ml.azure.com](https://ml.azure.com). If prompted, sign in using the Microsoft account you used in the previous task and select your Azure subscription and workspace.
-2. View the Azure Machine Learning studio interface for your workspace - you can manage all of the assets in your workspace from here.
+In Jupyter, open the Data Exploration.ipynb notebook in the ml-basics folder and follow the instructions it contains.
+When you've finished, close and halt the notebook.
+Clean-up
+If you used a compute instance in an Azure Machine Learning workspace to complete the exercise, use these steps to clean up.
 
-## Task 3: Create Compute Resources
-
-One of the benefits of Azure Machine Learning is the ability to create cloud-based compute on which you can run experiments and training scripts at scale.
-
-1. In the Azure Machine Learning studio web interface for your workspace, view the **Compute** page. This is where you'll manage all the compute targets for your data science activities.
-2. On the **Compute Instances** tab, add a new compute instance with the following settings. You'll use this as a workstation from which to test your model:
-    - **Compute name**: *enter a unique name*
-    - **Virtual Machine type**: CPU
-    - **Virtual Machine size**: Standard_DS11_v2
-3. While the compute instance is being created, switch to the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Compute name**: *enter a unique name*
-    - **Virtual Machine type**: CPU
-    - **Virtual Machine priority**: Dedicated
-    - **Virtual Machine size**: Standard_DS11_v2
-    - **Minimum number of nodes**: 0
-    - **Maximum number of nodes**: 2
-    - **Idle seconds before scale down**: 120
-4. Note the **Inference Clusters** tab. This is where you can create and manage compute targets on which to deploy your trained models as web services for client applications to consume.
-5. Note the **Attached Compute** tab. This is where you could attach a virtual machine or Databricks cluster that exists outside of your workspace.
-
-    > **Note**: You'll explore compute targets in more detail later in the course.
-
-## Task 4: Create Data Resources
-
-Now that you have some compute resources that you can use to process data, you'll need a way to store and ingest the data to be processed.
-
-1. In the *Studio* interface, view the **Datastores** page. Your Azure ML workspace already includes two datastores based on the Azure Storage account that was created along with the workspace. These are used to store notebooks, configuration files, and data.
-
-   > **Note**: In a real-world environment, you'd likely add custom datastores that reference your business data stores - for example, Azure blob containers, Azure Data Lakes, Azure SQL Databases, and so on. You'll explore this later in the course.
-
-2. In the *Studio* interface, view the **Datasets** page. Datasets represent specific data files or tables that you plan to work with in Azure ML.
-3. Create a new dataset from web files, using the following settings:
-    * **Basic Info**:
-        * **Web URL**: https://aka.ms/diabetes-data
-        * **Name**: diabetes dataset (*be careful to match the case and spacing*)
-        * **Dataset type**: Tabular
-        * **Description**: Diabetes data
-    * **Settings and preview**:
-        * **File format**: Delimited
-        * **Delimiter**: Comma
-        * **Encoding**: UTF-8
-        * **Column headers**: Use headers from first file
-        * **Skip rows**: None
-    * **Schema**:
-        * Include all columns other than **Path**
-        * Review the automatically detected types
-    * **Confirm details**:
-        * Do not profile the dataset after creation
-4. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes, and you will use it in many of the subsequent labs in this course.
-
-    > **Note**: You can optionally generate a *profile* of the dataset to see more details. You'll explore datasets in more detail later in the course.
+Close all Jupyter notebooks and the Jupyter home page.
+In Azure Machine Learning Studio, on the Compute page, select your compute instance and stop it.
+If you don't intend to complete other modules that require the Azure Machine Learning workspace, you can delete the resource group you created for it from your Azure subscription.
