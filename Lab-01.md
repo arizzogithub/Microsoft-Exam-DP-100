@@ -3,23 +3,24 @@
 Data exploration and analysis is typically an iterative process, in which the data scientist takes a sample of data, and performs the following kinds of task to analyze it and test hypotheses:
 
 * Clean data to handle errors, missing values, and other issues.
-*Apply statistical techniques to better understand the data, and how the sample might be expected to represent the real-world population of data, allowing for random variation.
-*Visualize data to determine relationships between variables, and in the case of a machine learning project, identify features that are potentially predictive of the label.
-*Derive new features from existing ones that might better encapsulate relationships within the data.
-*Revise the hypothesis and repeat the process.
+* Apply statistical techniques to better understand the data, and how the sample might be expected to represent the real-world population of data, allowing for random variation.
+* Visualize data to determine relationships between variables, and in the case of a machine learning project, identify features that are potentially predictive of the label.
+* Derive new features from existing ones that might better encapsulate relationships within the data.
+* Revise the hypothesis and repeat the process.
 
 Data scientists can use a variety of tools and techniques to explore, visualize, and manipulate data. One of the most common ways in which data scientists work with data is to use the Python language and some specific packages for data processing.
 
 The best way to learn about exploring and preparing data is to try it for yourself, so that's what you'll do in this exercise.
 
-Before you start
+## Before you start
 To complete the exercise, you'll need:
 
-A Microsoft Azure subscription. If you don't already have one, you can sign up for a free trial at https://azure.microsoft.com/free .
-An Azure Machine Learning workspace with a compute instance and the ml-basics repository cloned.
- Note
+* A Microsoft Azure subscription. If you don't already have one, you can sign up for a free trial at https://azure.microsoft.com/free .
+* An Azure Machine Learning workspace with a compute instance and the ml-basics repository cloned.
 
-This module is one of many that make use of an Azure Machine Learning workspace. If you are completing this module as part of the Create machine learning models  learning path or in preparation for the Azure Data Scientist  certification, consider creating the workspace once and reusing it in other modules. After completing the exercise, be sure to follow the Clean Up instructions to stop compute resources, and retain the workspace if you plan to reuse it.
+ ## Note
+
+_This module is one of many that make use of an Azure Machine Learning workspace. If you are completing this module as part of the Create machine learning models  learning path or in preparation for the Azure Data Scientist  certification, consider creating the workspace once and reusing it in other modules. After completing the exercise, be sure to follow the Clean Up instructions to stop compute resources, and retain the workspace if you plan to reuse it._
 
 Create an Azure Machine Learning workspace
 If you don't already have an Azure Machine Learning workspace in your Azure subscription, follow these steps to create one:
