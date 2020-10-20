@@ -25,7 +25,7 @@ _This module is one of many that make use of an Azure Machine Learning workspace
 ## Create an Azure Machine Learning workspace
 If you don't already have an Azure Machine Learning workspace in your Azure subscription, follow these steps to create one:
 
-1. Sign into the Azure portal  using the Microsoft account associated with your Azure subscription.
+1. Sign into the Azure portal https://portal.azure.com using the Microsoft account associated with your Azure subscription.
 2. Select ＋ Create a resource, search for Machine Learning, and create a new Machine Learning resource with the following settings:
 
 * Workspace Name: enter a unique name of your choice
