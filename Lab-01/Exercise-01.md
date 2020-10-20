@@ -61,8 +61,9 @@ Use the following steps to clone the repository to your Azure Machine Learning w
 
 _Copy_
 
-**cd Users 
-git clone https://github.com/microsoftdocs/ml-basics**
+**cd Users** 
+
+**git clone https://github.com/microsoftdocs/ml-basics**
 
 5. After the command has completed and the checkout of the files is done, close the terminal tab and view the home page in your Jupyter notebook file explorer. Then open the Users folder - it should contain an ml-basics folder, containing the files you will use in the rest of this exercise.
 
