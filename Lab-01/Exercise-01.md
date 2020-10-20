@@ -39,7 +39,7 @@ If you don't already have an Azure Machine Learning workspace in your Azure subs
 ## Create a compute instance
 To run the notebook used in this exercise, you will need a compute instance in your Azure Machine Learning workspace.
 
-1. In Azure Machine Learning studio , view the Compute page for your workspace (under Manage).
+1. In Azure Machine Learning studio https://ml.azure.com , view the Compute page for your workspace (under Manage).
 2. On the Compute Instances tab, if you already have a compute instance, start it; otherwise create a new compute instance with the following settings:
 
 * Compute name: enter a unique name
