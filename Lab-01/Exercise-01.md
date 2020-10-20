@@ -49,9 +49,9 @@ To run the notebook used in this exercise, you will need a compute instance in y
 3. Wait for the compute instance to start (this may take a minute or so)
 
 ## Clone the ml-basics repository
-The files used in this module (and other related modules) are published in the MicrosoftDocs/ml-basics GitHub repository. If you haven't already done so, use the following steps to clone the repository to your Azure Machine Learning workspace:
+Use the following steps to clone the repository to your Azure Machine Learning workspace:
 
-1. In Azure Machine Learning studio , on the Compute page, view your running compute instance.
+1. In Azure Machine Learning studio https://ml.azure.com , on the Compute page, view your running compute instance.
 
 2. Use the Jupyter link to open Jupyter Notebooks in a new browser tab.
 
