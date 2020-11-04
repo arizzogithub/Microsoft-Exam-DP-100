@@ -1,4 +1,4 @@
-# /Exercise - Explore data
+# Exercise - Explore data
 
 Data exploration and analysis is typically an iterative process, in which the data scientist takes a sample of data, and performs the following kinds of task to analyze it and test hypotheses:
 
