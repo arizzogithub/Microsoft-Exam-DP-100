@@ -83,4 +83,4 @@ If you used a compute instance in an Azure Machine Learning workspace to complet
 1. Close all Jupyter notebooks and the Jupyter home page.
 2. In Azure Machine Learning Studio, on the Compute page, select your compute instance and stop it.
 
-Iif you don't intend to complete other modules that require the Azure Machine Learning workspace, you can delete the resource group you created for it from your Azure subscription.
+If you don't intend to complete other modules that require the Azure Machine Learning workspace, you can delete the resource group you created for it from your Azure subscription.
